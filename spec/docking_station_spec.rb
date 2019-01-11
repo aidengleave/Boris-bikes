@@ -22,7 +22,8 @@ describe DockingStation do
   describe '#dock' do
     it 'docks bike' do
       bike = Bike.new
-      # expect(subject.dock(bike)).to eq bike
+      subject.dock(bike)
+      expect(subject.bikes).to include(bike)
     end
 
     it 'raises an error when full' do
